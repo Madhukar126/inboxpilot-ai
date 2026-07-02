@@ -51,7 +51,7 @@ export async function POST(
       tenantId: membership.tenantId,
       emailThreadId: params.threadId,
       actionType: body.actionType as never,
-      details: body.details ?? {}
+      details: (body.details ?? {}) as import("@prisma/client").Prisma.InputJsonValue
     }
   });
 
